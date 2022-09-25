@@ -24,13 +24,13 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
-    public Job() {
+    public Job(String job1, Employer employer, Location location, PositionType positionType, CoreCompetency cooking) {
         id = nextId;
         nextId++;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this();
+    public Job() {
+        this.id= id;
         this.name = name;
         this.employer = employer;
         this.location = location;

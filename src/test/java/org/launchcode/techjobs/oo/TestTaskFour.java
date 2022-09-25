@@ -40,7 +40,7 @@ public class TestTaskFour extends AbstractTest {
 
 
         new Expectations() {{
-            new Job(); minTimes = 2; maxTimes = 2;
+            new Job("Job1", new Employer("Ben's Fish Shack"), new Location("St. Louis"), new PositionType("Super Cook!"), new CoreCompetency("Cooking")); minTimes = 2; maxTimes = 2;
         }};
 
         try {
