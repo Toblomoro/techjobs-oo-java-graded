@@ -15,18 +15,26 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1, job2;
-  @Before
-  public void createJob(){
-      job1 = new Job("Job1", new Employer("Ben's Fish Shack"), new Location("St. Louis"), new PositionType("Super Cook!"), new CoreCompetency("Cooking"));
-      job2 = new Job();
 
-  }
+    Job job1 = new Job("Job1", new Employer("Ben's Fish Shack"), new Location("St. Louis"), new PositionType("Super Cook!"), new CoreCompetency("Cooking"));
+        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+
 
         @Test //debugged and realized they oth equaled nul to they were euqlling echother so i need to create the jobs becasue currently they were created as null
     public void testSettingJobId() {
-        assertNotEquals(job1, job2);
+        assertNotEquals(job1.getId(), job2.getId());
     }
 
+    @Test
+    public void testJobConstructorSetsAllFields() {
+            assertTrue(job1 instanceof Job);
+            assertEquals(1,job1.getId());
+
+
+
+
+
+    }
 }
 

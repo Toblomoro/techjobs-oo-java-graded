@@ -24,7 +24,7 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
-    public Job(String job1, Employer employer, Location location, PositionType positionType, CoreCompetency cooking) {
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency cooking) {
         id = nextId;
         nextId++;
     }
