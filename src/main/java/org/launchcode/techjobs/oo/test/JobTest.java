@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1, job2, job3, job4, job5, job6, job7, job8,job9, job10, job11;
+    Job job1, job2, job3;
 
     @Before
     public void createJobObject() {
@@ -50,7 +50,10 @@ public class JobTest {
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
-
+String testString = job3.toString();
+int length = testString.length();
+        assertTrue(testString.substring(1).contains("\n"));
+        assertTrue(testString.substring(length-1).contains("\n"));
     }
 
 
