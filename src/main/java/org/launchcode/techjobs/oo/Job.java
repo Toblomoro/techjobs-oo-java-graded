@@ -1,5 +1,10 @@
 package org.launchcode.techjobs.oo;
 
+import org.launchcode.techjobs.oo.CoreCompetency;
+import org.launchcode.techjobs.oo.Employer;
+import org.launchcode.techjobs.oo.Location;
+import org.launchcode.techjobs.oo.PositionType;
+
 import java.util.Objects;
 
 public class Job {
@@ -17,26 +22,22 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-
-
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match.
-
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id.
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency cooking) {
+    public Job() {
         id = nextId;
         nextId++;
     }
 
-    public Job() {
-        this.id= id;
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
+    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
+    //  match.
 
     @Override
     public boolean equals(Object o) {
@@ -51,12 +52,11 @@ public class Job {
         return Objects.hash(id);
     }
 
-    public int getId() {
-        return id;
-    }
+
+    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
+    //  and id.
 
 
-    //Getters and Setters
     public String getName() {
         return name;
     }
@@ -96,4 +96,9 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    public int getId() {
+        return id;
+    }
+
 }
