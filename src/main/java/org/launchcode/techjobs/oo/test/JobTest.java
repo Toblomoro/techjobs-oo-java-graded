@@ -15,7 +15,8 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1, job2, job3;
+    Job job1, job2, job3, job4;
+
 
     @Before
     public void createJobObject() {
@@ -23,6 +24,9 @@ public class JobTest {
         job2 = new Job();
         job3 = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+        job4 = new Job("Product tester",new Employer("ACME"),
+                new Location(""), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
     }
@@ -55,7 +59,22 @@ int length = testString.length();
         assertTrue(testString.substring(1).contains("\n"));
         assertTrue(testString.substring(length-1).contains("\n"));
     }
-
-
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        assertEquals("\nID: " + job3.getId() +
+                "\nName: " + job3.getName() +
+                "\nEmployer: " + job3.getEmployer() +
+                "\nLocation: " + job3.getLocation() +
+                "\nPosition Type: " + job3.getPositionType() +
+                "\nCore Competency: " + job3.getCoreCompetency() +
+                "\n", job3.toString());
+    }
+@Test
+    public void testToStringHandlesEmptyField(){
+    String testString = job4.toString();
+    assertTrue(testString.contains("Data not available")); //Took forever to realize i didnt have a capital A in avalable........
 }
+}
+
+
 
