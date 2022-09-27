@@ -56,7 +56,7 @@ public class TestTaskFive extends AbstractTest {
             Assert.assertEquals('\n', '\n'); minTimes = 2;
         }};
 
-        testToStringStartsAndEndsWithNewLineMethod.invoke(jobTest);
+         testToStringStartsAndEndsWithNewLineMethod.invoke(jobTest);
     }
 
     @Test

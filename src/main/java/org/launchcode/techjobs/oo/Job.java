@@ -25,6 +25,7 @@ public class Job {
     public Job() {
         id = nextId;
         nextId++;
+
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
@@ -121,12 +122,12 @@ public class Job {
         if (this.getCoreCompetency().getValue().equals("")) {
             this.setCoreCompetency(new CoreCompetency("Data not available"));
         }
-        return "\n" +
-                "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
-                "Employer: " + employer + "\n" +
-                "Location: " + location + "\n" +
-                "Position Type: " + positionType + "\n" +
-                "Core Competency: " + coreCompetency + "\n";
+        return '\n' +
+                "ID: " + id + '\n' +
+                "Name: " + name + '\n' +
+                "Employer: " + employer + '\n' +
+                "Location: " + location + '\n' +
+                "Position Type: " + positionType + '\n'+
+                "Core Competency: " + coreCompetency + '\n';
     }
 }
