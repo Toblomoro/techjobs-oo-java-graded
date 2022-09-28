@@ -81,7 +81,7 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
         String testString = jobTest.toString();
 int length = testString.length();
-        assertTrue(testString.substring(1).contains("\n"));
+        assertTrue(testString.substring(0,2).contains("\n"));
         assertTrue(testString.substring(length-1).contains("\n"));
     }
     @Test
@@ -90,21 +90,21 @@ int length = testString.length();
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals("\nID: " + jobTest.getId() +
-                "\nName: " + jobTest.getName() +
-                "\nEmployer: " + jobTest.getEmployer() +
-                "\nLocation: " + jobTest.getLocation() +
-                "\nPosition Type: " + jobTest.getPositionType() +
-                "\nCore Competency: " + jobTest.getCoreCompetency() +
-                "\n", jobTest.toString());
+        assertEquals('\n' + "ID: " + jobTest.getId() +
+                '\n' + "Name: " + jobTest.getName() +
+                '\n' + "Employer: " + jobTest.getEmployer() +
+                '\n' + "Location: " + jobTest.getLocation() +
+                '\n' + "Position Type: " + jobTest.getPositionType() +
+                '\n' + "Core Competency: " + jobTest.getCoreCompetency() +
+                '\n', jobTest.toString() );
     }
 @Test
     public void testToStringHandlesEmptyField(){
-    job4 = new Job("Product tester",new Employer("ACME"),
+    jobTest = new Job("Product tester",new Employer("ACME"),
             new Location(""), new PositionType("Quality control"),
             new CoreCompetency("Persistence"));
 
-    String testString = job4.toString();
+    String testString = jobTest.toString();
     assertTrue(testString.contains("Data not available")); //Took forever to realize i didnt have a capital A in avalable........
 }
 }
