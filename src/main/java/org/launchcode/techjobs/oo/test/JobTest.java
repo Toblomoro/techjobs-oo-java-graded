@@ -60,30 +60,31 @@ public class JobTest {
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals("Name:", jobTest.getName());
+        assertEquals("Product tester", jobTest.getName());
         assertEquals("ACME", jobTest.getEmployer().getValue());
         assertEquals("Desert", jobTest.getLocation().getValue());
         assertEquals("Quality control", jobTest.getPositionType().getValue());
         assertEquals("Persistence", jobTest.getCoreCompetency().getValue());
 
-        assertTrue(job3.getName() instanceof String);
-        assertTrue(job3.getEmployer() instanceof Employer);
-        assertTrue(job3.getLocation() instanceof Location);
-        assertTrue(job3.getPositionType() instanceof PositionType);
-        assertTrue(job3.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(jobTest.getName() instanceof String);
+        assertTrue(jobTest.getEmployer() instanceof Employer);
+        assertTrue(jobTest.getLocation() instanceof Location);
+        assertTrue(jobTest.getPositionType() instanceof PositionType);
+        assertTrue(jobTest.getCoreCompetency() instanceof CoreCompetency);
 
         //Add assertTrue for 5 more to test data type 'instance of'
     }
     @Test
-    public void testToStringStartsAndEndsWithNewLine(){
-        jobTest = new Job("Product tester",new Employer("ACME"),
+    public void testToStringStartsAndEndsWithNewLine() {
+        jobTest = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        String testString = jobTest.toString();
-int length = testString.length();
-        assertTrue(testString.substring(0,2).contains("\n"));
-        assertTrue(testString.substring(length-1).contains("\n"));
+
+        assertEquals("\n" + "\n",
+                jobTest.toString().substring(0, 1) +
+                        jobTest.toString().substring(jobTest.toString().length() - 1));
     }
+
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         jobTest = new Job("Product tester",new Employer("ACME"),
