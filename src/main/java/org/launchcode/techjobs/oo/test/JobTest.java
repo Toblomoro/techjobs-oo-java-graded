@@ -15,19 +15,19 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1, job2, job3, job4, jobTest
-            ;
+
+
 
 
     @Before
     public void createJob() {
-        job1 = new Job();
-        job2 = new Job();
-        job3 = new Job("Product tester",new Employer("ACME"),
+       Job job1 = new Job();
+        Job job2 = new Job();
+        Job job3 = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        job4 = new Job("Product tester",new Employer("ACME"),
+        Job job4 = new Job("Product tester",new Employer("ACME"),
                 new Location(""), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
@@ -35,6 +35,8 @@ public class JobTest {
 
 
 //    public void testSettingJobId() {
+//        Job job1 = new Job();
+//        Job job2 = new Job();
 //        assertEquals(false, job1.equals(job2));
 //    }
 
@@ -42,21 +44,29 @@ public class JobTest {
         //@Test //debugged and realized they oth equaled nul to they were euqlling echother so i need to create the jobs becasue currently they were created as null
     @Test
     public void testSettingJobId() {
-        job1 = new Job();
-        job2 = new Job();
+        Job job1 = new Job();
+        Job job2 = new Job();
+
         assertEquals(false, job1.equals(job2));
 
 
     }
     @Test
     public void testJobsForEquality() {
+        Job job3 = new Job("Product tester",new Employer("ACME"),
+                new Location("Desert"), new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
+
+        Job job4 = new Job("Product tester",new Employer("ACME"),
+                new Location(""), new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
         assertFalse(job3 == job4);
     }
 //    assertNotEquals(job1.getId(), job2.getId());
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        jobTest = new Job("Product tester",new Employer("ACME"),
+        Job jobTest = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
@@ -76,7 +86,7 @@ public class JobTest {
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-        jobTest = new Job("Product tester", new Employer("ACME"),
+        Job jobTest = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
@@ -87,7 +97,7 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
-        jobTest = new Job("Product tester",new Employer("ACME"),
+       Job jobTest = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
@@ -101,7 +111,7 @@ public class JobTest {
     }
 @Test
     public void testToStringHandlesEmptyField(){
-    jobTest = new Job("Product tester",new Employer("ACME"),
+    Job jobTest = new Job("Product tester",new Employer("ACME"),
             new Location(""), new PositionType("Quality control"),
             new CoreCompetency("Persistence"));
 
