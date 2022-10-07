@@ -66,56 +66,56 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        Job jobTest = new Job("Product tester",new Employer("ACME"),
+        Job job5 = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals("Product tester", jobTest.getName());
-        assertEquals("ACME", jobTest.getEmployer().getValue());
-        assertEquals("Desert", jobTest.getLocation().getValue());
-        assertEquals("Quality control", jobTest.getPositionType().getValue());
-        assertEquals("Persistence", jobTest.getCoreCompetency().getValue());
+        assertEquals("Product tester", job5.getName());
+        assertEquals("ACME", job5.getEmployer().getValue());
+        assertEquals("Desert", job5.getLocation().getValue());
+        assertEquals("Quality control", job5.getPositionType().getValue());
+        assertEquals("Persistence", job5.getCoreCompetency().getValue());
 
-        assertTrue(jobTest.getName() instanceof String);
-        assertTrue(jobTest.getEmployer() instanceof Employer);
-        assertTrue(jobTest.getLocation() instanceof Location);
-        assertTrue(jobTest.getPositionType() instanceof PositionType);
-        assertTrue(jobTest.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(job5.getName() instanceof String);
+        assertTrue(job5.getEmployer() instanceof Employer);
+        assertTrue(job5.getLocation() instanceof Location);
+        assertTrue(job5.getPositionType() instanceof PositionType);
+        assertTrue(job5.getCoreCompetency() instanceof CoreCompetency);
 
         //Add assertTrue for 5 more to test data type 'instance of'
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-        Job jobTest = new Job("Product tester", new Employer("ACME"),
+        Job job5 = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
         assertEquals("\n" + "\n",
-                jobTest.toString().substring(0, 1) +
-                        jobTest.toString().substring(jobTest.toString().length() - 1));
+                job5.toString().substring(0, 1) +
+                        job5.toString().substring(job5.toString().length() - 1));
     }
 
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
-       Job jobTest = new Job("Product tester",new Employer("ACME"),
+       Job job5 = new Job("Product tester",new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals('\n' + "ID: " + jobTest.getId() +
-                '\n' + "Name: " + jobTest.getName() +
-                '\n' + "Employer: " + jobTest.getEmployer() +
-                '\n' + "Location: " + jobTest.getLocation() +
-                '\n' + "Position Type: " + jobTest.getPositionType() +
-                '\n' + "Core Competency: " + jobTest.getCoreCompetency() +
-                '\n', jobTest.toString() );
+        assertEquals('\n' + "ID: " + job5.getId() +
+                '\n' + "Name: " + job5.getName() +
+                '\n' + "Employer: " + job5.getEmployer() +
+                '\n' + "Location: " + job5.getLocation() +
+                '\n' + "Position Type: " + job5.getPositionType() +
+                '\n' + "Core Competency: " + job5.getCoreCompetency() +
+                '\n', job5.toString() );
     }
 @Test
     public void testToStringHandlesEmptyField(){
-    Job jobTest = new Job("Product tester",new Employer("ACME"),
+    Job job5 = new Job("Product tester",new Employer("ACME"),
             new Location(""), new PositionType("Quality control"),
             new CoreCompetency("Persistence"));
 
-    String testString = jobTest.toString();
+    String testString = job5.toString();
     assertTrue(testString.contains("Data not available")); //Took forever to realize i didnt have a capital A in avalable........
 }
 }
